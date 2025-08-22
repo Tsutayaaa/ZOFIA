@@ -1,7 +1,9 @@
-import cv2
-import os
 import math
+import os
 from typing import List
+
+import cv2
+
 
 def split_long_video(
     video_path: str,

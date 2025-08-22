@@ -1,10 +1,10 @@
+from typing import Dict
+
 import cv2
 import numpy as np
-import os
-from typing import Dict, Optional
-
 # 导入我们的检测器类
-from fishmouth_behavior.mouth_detect.detector import FishmouthDetector
+from ..mouth_detect.detector import FishmouthDetector
+
 
 def create_detection_preview_video(
     input_video_path: str,

@@ -1,7 +1,9 @@
-import matplotlib.pyplot as plt
 import os
-import pandas as pd
 from typing import Optional, List, Dict
+
+import matplotlib.pyplot as plt
+import pandas as pd
+
 
 def plot_analysis_results(
     df_full: pd.DataFrame,
