@@ -1,9 +1,10 @@
+import os
+from typing import List, Optional
+
 import cv2
 import numpy as np
-import os
 from ultralytics import YOLO
-from typing import List, Tuple, Optional
-import traceback
+
 
 class VideoFishHeadCropper:
     """

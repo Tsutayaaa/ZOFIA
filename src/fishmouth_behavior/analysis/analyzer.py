@@ -1,7 +1,9 @@
-import pandas as pd
-import numpy as np
-from scipy.signal import find_peaks
 from typing import Optional, List, Dict
+
+import numpy as np
+import pandas as pd
+from scipy.signal import find_peaks
+
 
 class FishMouthAnalyzer:
     """

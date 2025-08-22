@@ -1,10 +1,12 @@
+import os
+from typing import Optional, Dict
+
 import cv2
+import numpy as np
+import pandas as pd
 import torch
 from ultralytics import YOLO
-import pandas as pd
-import os
-import numpy as np
-from typing import List, Tuple, Optional, Dict
+
 
 class FishmouthDetector:
     """

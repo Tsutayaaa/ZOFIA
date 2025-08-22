@@ -1,15 +1,16 @@
-import os
-import sys
-import cv2
-import pandas as pd
 import argparse
 import json
-from pathlib import Path
-from typing import Dict, List, Tuple
+import os
+import sys
 import traceback
 from datetime import datetime
-from tqdm import tqdm
+from pathlib import Path
+from typing import Dict, List
+
+import cv2
 import numpy as np
+import pandas as pd
+from tqdm import tqdm
 
 # 导入项目模块
 try:
