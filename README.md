@@ -49,7 +49,7 @@ This repository focuses on the reusable video-analysis workflow and pretrained h
   <a href="docs/images/workflow-preview.jpg"><img src="docs/images/workflow-preview.jpg" alt="ZOFIA workflow: head detection, normalization and mouth-opening event extraction" width="360"></a>
 </p>
 
-*Workflow (manuscript Figure 2): video → smoothed head crop → eye detection and mouth segmentation → normalized signals → opening–closing events. Click any figure to view a larger version.*
+*Workflow: video → smoothed head crop → eye detection and mouth segmentation → normalized signals → opening–closing events. Click any figure to view a larger version.*
 
 The implementation uses the diagonal of the detected eye-region bounding box as its size reference, rather than a distance calculated from two eye-centre landmarks.
 
@@ -65,10 +65,10 @@ Event detection uses normalized area; the event JSON reports raw area and height
 
 ## Pretrained models
 
-**[Browse model weights](model/)** · **[Releases](https://github.com/Tsutayaaa/ZOFIA/releases)** · **[Try standalone inference](#standalone-inference)**
+**[Browse model weights](model/)** · **[Model release v1.0.0](https://github.com/Tsutayaaa/ZOFIA/releases/tag/models-v1.0.0)** · **[Try standalone inference](#standalone-inference)**
 
 > [!NOTE]
-> The versioned model release is being prepared. Use the checkpoint files in [`model/`](model/) for now; the download links below target the planned `models-v1.0.0` release.
+> Download the five checkpoints from [models-v1.0.0](https://github.com/Tsutayaaa/ZOFIA/releases/tag/models-v1.0.0), or use the copies in [`model/`](model/). The links below download individual release assets.
 
 | Checkpoint | Task | Architecture recorded in checkpoint | Size |
 | --- | --- | --- | ---: |
@@ -83,7 +83,7 @@ These checkpoints can also be used independently of the ZOFIA event-analysis pip
 <details>
 <summary><strong>Checkpoint compatibility and label notes</strong></summary>
 
-The files record Ultralytics version `8.3.63`. Use an installation that supports the recorded model architecture; this metadata does not guarantee compatibility with every Ultralytics or YOLOv12 distribution. No inference or cross-version accuracy benchmark has been rerun for this release.
+Four checkpoints record Ultralytics version `8.3.63`; the earlier `head_detect.pt` records `8.3.82`. Use an installation that supports the recorded model architecture; this metadata does not guarantee compatibility with every Ultralytics or YOLOv12 distribution. No inference or cross-version accuracy benchmark has been rerun for this release.
 
 **Eye-model labels:** `fisheyes2.0.pt` records two class labels, `1` and `fish_eyes`. Inspect the predicted classes before using its bounding boxes for normalization. `fisheyes3.0.pt` is excluded from the release because its metadata identifies a mouth-segmentation model (`fish_mouth`); its intended identity still needs confirmation.
 
@@ -105,7 +105,7 @@ For head detection, load `head_detect_v2.pt` and use the original recording as i
 <details>
 <summary><strong>Download verification and model license metadata</strong></summary>
 
-The planned release will include `SHA256SUMS` and `model_manifest.json` for file verification. To verify downloaded checkpoints, place the five `.pt` files and `SHA256SUMS` together and run:
+The release includes [SHA256SUMS](https://github.com/Tsutayaaa/ZOFIA/releases/download/models-v1.0.0/SHA256SUMS) and [model_manifest.json](https://github.com/Tsutayaaa/ZOFIA/releases/download/models-v1.0.0/model_manifest.json) for file verification. To verify downloaded checkpoints, place the five `.pt` files and `SHA256SUMS` together and run:
 
 ```bash
 # macOS
@@ -221,7 +221,7 @@ Annotations were prepared in Label Studio under standardized guidelines and revi
   <a href="docs/images/loss.png"><img src="docs/images/loss.png" alt="Training and validation losses for mouth, head and eye models" width="560"></a>
 </p>
 
-*Training dynamics (manuscript Figure 4): (A) mouth segmentation, (B) mouth bounding-box detection, (C) head detection and (D) eye detection.*
+*Training dynamics: (A) mouth segmentation, (B) mouth bounding-box detection, (C) head detection and (D) eye detection.*
 
 <details>
 <summary>How to read the training curves</summary>
@@ -236,7 +236,7 @@ Losses fall rapidly early in training and then decrease more gradually or platea
   <a href="docs/images/heatmap.png"><img src="docs/images/heatmap.png" alt="Validation confusion matrices for mouth, head and eye models" width="720"></a>
 </p>
 
-*Validation confusion matrices supplied with the ZOFIA manuscript: (A) mouth, (B) head and (C) eyes. Rows are true labels and columns are predicted labels. Diagonal target counts indicate matched detections; target-to-background entries are false negatives and background-to-target entries are false positives.*
+*Validation confusion matrices: (A) mouth, (B) head and (C) eyes. Rows are true labels and columns are predicted labels. Diagonal target counts indicate matched detections; target-to-background entries are false negatives and background-to-target entries are false positives.*
 
 The following counts are transcribed from the figure. Precision and recall are calculated from those displayed counts, using precision = TP/(TP + FP) and recall = TP/(TP + FN).
 

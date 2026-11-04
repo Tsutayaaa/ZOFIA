@@ -2,8 +2,8 @@
 
 | Source file | README display file | Content |
 | --- | --- | --- |
-| `workflow.png` | `workflow-preview.jpg` | Head detection, smoothed ROI, eye and mouth models, normalization and event extraction (manuscript Figure 2) |
-| `Loss.tif` | `loss.png` | Training and validation loss curves for four models (manuscript Figure 4) |
+| `workflow.png` | `workflow-preview.jpg` | Head detection, smoothed ROI, eye and mouth models, normalization and event extraction |
+| `Loss.tif` | `loss.png` | Training and validation loss curves for four models |
 | `heatmap.tif` | `heatmap.png` | Mouth, head and eye validation confusion matrices |
 
 Original figures are retained unchanged. The root README uses PNG versions of the TIFF figures for browser display and a resized JPEG workflow preview with a white background so that labels remain visible in dark themes. The original workflow PNG contains transparency.
