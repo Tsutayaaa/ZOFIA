@@ -17,6 +17,7 @@
 <a href="#usage">Usage</a> ·
 <a href="#model-development-and-validation">Validation</a> ·
 <a href="#publications-and-citation">Citation</a> ·
+<a href="#license-and-release-scope">License</a> ·
 <a href="https://github.com/Tsutayaaa/ZOFIA/issues">Issues</a>
 </p>
 
@@ -287,6 +288,16 @@ Detection quality depends on recording conditions, head orientation and the visi
 Missing mouth detections are stored as zero measurements. Missing or zero eye diagonals are forward-filled and then backward-filled for normalization; if no usable eye measurements exist, the normalized signals are set to zero. Detection failures can therefore affect event counts and should be checked visually.
 
 The event detector retains complete cycles bounded by valleys. Partial events at recording or segment boundaries may be excluded, and counts from independently analysed segments need not sum to the count from the full recording.
+
+## License and release scope
+
+The publicly released ZOFIA workflow, source code and pretrained model weights are licensed under the **GNU Affero General Public License v3.0 (AGPL-3.0)**. See [LICENSE](LICENSE) for the full terms. Upstream copyright and license notices remain applicable, including those supplied with the YOLO models and Ultralytics components.
+
+The licensed software includes the reusable video-processing, detection, normalization, event-extraction and visualization code, including `src/analysis/`. These pipeline components are part of the public workflow.
+
+**Experimental data and study-specific downstream analyses are not part of this release.** Raw experimental recordings, individual-level measurements, unpublished datasets, study-specific statistical analysis scripts and unpublished analysis results are not made available or licensed by this release. The figures and summary results already displayed in this README do not constitute a release of the underlying experimental data. No license to those unreleased materials is granted here; separate permission is required to obtain or reuse them.
+
+This scope statement does not limit any rights granted by AGPL-3.0 or remove its obligations for covered works, including providing the Corresponding Source where required. Materials that form part of the required Corresponding Source cannot be excluded merely by calling them experimental or analysis materials.
 
 ## Publications and citation
 
